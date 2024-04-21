@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css" />
-    <title>RunPod Application Manager</title>
+    <title>NamiQ Application Manager</title>
 </head>
 <body class="ocean-theme">
 <div class="container mt-5">
-    <h1 class="text-center">RunPod Application Manager</h1>
+    <h1 class="text-center">NamiQ ThinkVision Application Manager</h1>
     <div class="table-responsive ocean-table mx-auto">
         <table class="table table-bordered table-hover">
             <thead class="thead-dark">
@@ -20,25 +20,40 @@
             </tr>
             </thead>
             <tbody>
+            <tr id="rowAutomatic">
+                <a href="http://namiq.io:3001">Automatic</a>
+                <td>
+                    <button id="stopAutomatic" class="btn btn-danger">Stop</button>
+                    <button id="startAutomatic" class="btn btn-success">Start</button>
+                </td>
+            </tr>
+
             <tr id="rowA1111">
-                <td>A1111</td>
+                <a href="http://namiq.io:3001">SD Auto1111</a>
                 <td>
                     <button id="stopA111" class="btn btn-danger">Stop</button>
                     <button id="startA111" class="btn btn-success">Start</button>
                 </td>
             </tr>
             <tr id="rowKohya_ss">
-                <td>Kohya_ss</td>
+                <td>Lora Trainer</td>
                 <td>
                     <button id="stopKohya" class="btn btn-danger">Stop</button>
                     <button id="startKohya" class="btn btn-success">Start</button>
                 </td>
             </tr>
             <tr id="rowComfyUI">
-                <td>ComfyUI</td>
+                <td>AI Workflow</td>
                 <td>
                     <button id="stopComfyUI" class="btn btn-danger">Stop</button>
                     <button id="startComfyUI" class="btn btn-success">Start</button>
+                </td>
+            </tr>
+	    <tr id=rowTools>
+            <td>Manager tools</td>
+                <td>
+                    <a href="http://namiq.io:8880">Jupyter</a>
+                    <a href="http://namiq.io:2999">Uploader</a>
                 </td>
             </tr>
             </tbody>

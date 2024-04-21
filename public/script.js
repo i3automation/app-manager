@@ -22,6 +22,18 @@ $(document).ready(function() {
         });
     });
 
+    $('#stopAutomatic').click(function () {
+        $.get('/stop_automatic', function (data) {
+            alert(data);
+        });
+    });
+
+    $('#startAutomatic').click(function () {
+        $.get('/start_automatic', function (data) {
+            alert(data);
+        });
+    });
+
     $('#stopKohya').click(function () {
         $.get('/stop_kohya', function (data) {
             alert(data);

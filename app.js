@@ -5,7 +5,7 @@ const PORT = 8000;
 
 app.use(express.static('public'));
 
-app.get('/stop_a1111', (req, res) => {
+app.get('/stop_a111', (req, res) => {
     exec('scripts/stop_a1111.sh &', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error stopping A1111: ${error}`);
@@ -14,6 +14,17 @@ app.get('/stop_a1111', (req, res) => {
 
     res.send('Stopped A1111 successfully!');
 });
+
+app.get('/stop_automatic', (req, res) => {
+    exec('scripts/stop_automatic.sh &', (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Error stopping Automatic: ${error}`);
+        }
+    });
+
+    res.send('Stopped Automatic successfully!');
+});
+
 
 app.get('/start_a1111', (req, res) => {
     exec('scripts/start_a1111.sh &', (error, stdout, stderr) => {
@@ -25,24 +36,35 @@ app.get('/start_a1111', (req, res) => {
     res.send('Started A1111 successfully!');
 });
 
-app.get('/stop_kohya', (req, res) => {
-    exec('scripts/stop_kohya.sh &', (error, stdout, stderr) => {
+
+app.get('/start_automatic', (req, res) => {
+    exec('scripts/start_automatic.sh &', (error, stdout, stderr) => {
         if (error) {
-            console.error(`Error stopping Kohya_ss: ${error}`);
+            console.error(`Error starting Automatic: ${error}`);
         }
     });
 
-    res.send('Stopped Kohya_ss successfully!');
+    res.send('Started Automatic successfully!');
+});
+
+app.get('/stop_kohya', (req, res) => {
+    exec('scripts/stop_kohya.sh &', (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Error stopping Lora Trainer: ${error}`);
+        }
+    });
+
+    res.send('Stopped Lora Trainer successfully!');
 });
 
 app.get('/start_kohya', (req, res) => {
     exec('scripts/start_kohya.sh &', (error, stdout, stderr) => {
         if (error) {
-            console.error(`Error starting Kohya_ss: ${error}`);
+            console.error(`Error starting Lora Trainer: ${error}`);
         }
     });
 
-    res.send('Started Kohya_ss successfully!');
+    res.send('Started Lora Trainer successfully!');
 });
 
 app.get('/stop_comfyui', (req, res) => {
