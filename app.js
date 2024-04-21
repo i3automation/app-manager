@@ -5,7 +5,7 @@ const PORT = 8000;
 
 app.use(express.static('public'));
 
-app.get('/stop_a111', (req, res) => {
+app.get('/stop_a1111', (req, res) => {
     exec('scripts/stop_a1111.sh &', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error stopping A1111: ${error}`);
